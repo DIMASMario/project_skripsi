@@ -1,0 +1,243 @@
+/* ====================================
+   DESA TANJUNG BARU WEBSITE STYLES
+   ==================================== */
+
+/* Import Component Styles */
+@import url('./layout.css');
+@import url('./components/frontend.css');
+@import url('./components/dashboard.css');
+
+/* Local Assets - No CDN Dependencies */
+/* Tailwind CSS is loaded separately via tailwind.min.css */
+/* Fonts are loaded separately via inter.css and material-symbols.css */
+
+/* Custom CSS Variables */
+:root {
+  --primary: #005c99;
+  --background-light: #f5f7f8;
+  --background-dark: #0f1b23;
+  --accent-yellow: #FFD700;
+  --text-light: #0c161d;
+  --text-dark: #f5f7f8;
+  --border-light: #e2e8f0;
+  --border-dark: #374151;
+  --card-light: #ffffff;
+  --card-dark: #1f2937;
+}
+
+/* Material Symbols Configuration */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* Alpine.js Cloak */
+[x-cloak] { 
+  display: none !important; 
+}
+
+/* Custom Utilities */
+.bg-primary { background-color: var(--primary); }
+.text-primary { color: var(--primary); }
+.border-primary { border-color: var(--primary); }
+
+/* Remove ALL outlines and focus rings - Enhanced */
+* {
+  outline: none !important;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Navbar Focus Styles - Remove Outline */
+.navbar-link,
+.navbar-button,
+nav a,
+nav button,
+header a,
+header button,
+a,
+button {
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: inherit;
+}
+
+.navbar-link:focus,
+.navbar-button:focus,
+nav a:focus,
+nav button:focus,
+header a:focus,
+header button:focus,
+a:focus,
+button:focus,
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-focus-ring-color: transparent !important;
+}
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Allow text selection where needed */
+input, textarea, [contenteditable] {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Smooth transitions for hover effects */
+nav a {
+  transition: color 0.2s ease-in-out;
+}
+
+nav button {
+  transition: all 0.2s ease-in-out;
+}
+
+.bg-background-light { background-color: var(--background-light); }
+.bg-background-dark { background-color: var(--background-dark); }
+
+.bg-card-light { background-color: var(--card-light); }
+.bg-card-dark { background-color: var(--card-dark); }
+
+.text-text-light { color: var(--text-light); }
+.text-text-dark { color: var(--text-dark); }
+
+.border-border-light { border-color: var(--border-light); }
+.border-border-dark { border-color: var(--border-dark); }
+
+/* Status Colors */
+.bg-pending { background-color: #FBBF24; }
+.text-pending { color: #FBBF24; }
+.bg-processing { background-color: #3B82F6; }
+.text-processing { color: #3B82F6; }
+.bg-completed { background-color: #10B981; }
+.text-completed { color: #10B981; }
+.bg-rejected { background-color: #EF4444; }
+.text-rejected { color: #EF4444; }
+
+/* Custom Transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #004080;
+}
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: var(--background-dark);
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .text-4xl { font-size: 2rem; line-height: 2.5rem; }
+  .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+}
+
+/* Loading Animation */
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Form Focus States */
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  --tw-ring-color: var(--primary);
+  --tw-ring-opacity: 0.5;
+  border-color: var(--primary);
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #004080;
+  transform: translateY(-1px);
+}
+
+/* Card Shadows */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Navbar Blur Effect */
+.navbar-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Print Styles */
+@media print {
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+}
+
+/* Accessibility */
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--primary);
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-enter {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.mobile-menu-leave {
+  animation: slideOutLeft 0.3s ease-in;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}

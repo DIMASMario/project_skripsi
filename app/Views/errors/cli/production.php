@@ -1,0 +1,1 @@
+Error: <?= isset($statusCode) ? esc($statusCode) : '500' ?> - <?= isset($message) ? esc($message) : 'Server Error' ?>
